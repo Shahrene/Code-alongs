@@ -1,0 +1,40 @@
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  width: 900px;
+}
+.hero img {
+  width: 100%; /* percentage is based on its parent */
+}
+h1 {
+  border: 1px, solid, grey;
+  width: 500px;
+  padding: 5px;
+  color: rgb(180, 180, 180);
+}
+
+main {
+  padding:
+}
+a {
+  text-decoration: none;
+}
+h2 {
+  color: grey;
+}
+p {
+  color: rgb(190, 190, 190);
+}
+footer {
+  color: rgb(190, 190, 190);
+}
+.press {
+  display: flex; /* does not work in older browsers, use float */
+  justify-content: space-between;
+}
+.press img {
+  width: 24%;
+  border: 2px, solid, grey;
+}

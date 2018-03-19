@@ -1,0 +1,23 @@
+/* decendent selector */
+
+article h3 {
+  color: darkgreen;
+}
+/*search by class*/
+.title {
+  color: purple;
+}
+p {
+  background-color: lightgreen;
+ }
+ /* search by id */
+#warning {
+  font-size: 30px;
+}
+/* direct child selector */
+article > p {
+  color: mistyrose;
+}
+article footer p.joy {
+  background-color: white;
+}
