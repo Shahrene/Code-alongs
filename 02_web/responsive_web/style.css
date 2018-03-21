@@ -1,0 +1,54 @@
+ /* id is the most specific, next class, last tag */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: mistyrose;
+
+}
+div {
+  height: 100px;
+  margin : 1%;
+  background-color: lightgreen;
+}
+
+@media (min-width: 38em) {
+
+div {
+  width: 23%;
+  margin: 1%;
+  float: left;
+  }
+}
+@media (max-width: 42em)  {
+
+div {
+  width: 56%;
+  margin: 1%;
+  background-color: lightgreen;
+  float: left;
+  }
+}
+
+/*
+@media (min-width: 500px) {
+
+body {
+  background-color: plum;
+}
+}
+@media (min-width: 800px) {
+
+body {
+  background-color: red;
+}
+} */
+p {
+  font-size: 1em; /* first font-size style sets the base font size for rest of document*/
+}
+h1 {
+  font-size: 3em; /* is three times the size of p
+}
+//if you placed the h1 inside the p tag the em size will be inherited from the parent.
+// use rem to keep its original size.
