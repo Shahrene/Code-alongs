@@ -1,0 +1,50 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 1em;
+  background-color: gray;
+}
+.tank {
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  border-radius: 30px;
+  position: relative;
+  box-shadow: 0 0 1em #B3B6B7;
+}
+.bowl {
+  width: 400px;
+  height: 400px;
+  background-color: mintcream;
+  border-radius: 20% 20% 40% 40%;
+  border: 60px solid white;
+  box-shadow: inset 0 0 20px #e3e3e3;
+  cursor: pointer;
+  transition: all 1s ease-out;
+}
+.bowl:hover {
+  box-shadow: inset 0 0 40px #ccc;
+}
+.poop {
+ background-color: darkolivegreen;
+}
+.flush {
+  background-color: #F0f3F4;
+  border-radius: 5px;
+  box-shadow: 0px 4px 0px #979A9A;
+  height: 60px;
+  width: 160px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+}
+.flush:active {
+  box-shadow: 0 2px 0 #7B7D7D;
+  top: 51%;
+}

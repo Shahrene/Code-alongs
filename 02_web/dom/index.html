@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Document</title>
+  </head>
+  <script type="text/javascript">
+
+//obj.addEventListener('click' func);
+
+var sayHello = function(name) {
+   console.log('Hello ' + name +', welcome to my page');
+}
+
+var customers = ['Mary', 'Jo', 'Lisa'];
+
+var forEach = function(arr, func) {
+  for (var index = 0; index < arr.length; index++){
+    func( arr[index] )
+  }
+}
+forEach(customers, sayHello);
+
+  </script>
+  <style media="screen">
+    div {
+      border: 3px solid pink;
+      background-color: mistyrose;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+  <body>
+    <h1>potato</h1>
+
+  <div class="the div">
+    <h2>eggplant</h2>
+    <p>tomato</p>
+  </div>
+  </body>
+</html>
