@@ -3,6 +3,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'pg'
 require 'pry'
+require 'active_record'
 
 
 def run_query(sql)
@@ -13,7 +14,7 @@ def run_query(sql)
 end
 
 get '/' do
-  sql = 'SELECT * FROM dishes ORDER BY id;' #asce is default or dece
+  sql = 'SELECT * FROM dishes ORDER BY id;' #asc is default or dece
   @dishes = run_query(sql)
   erb :index
 end

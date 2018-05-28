@@ -1,0 +1,57 @@
+<h2><%= @dish.name%> </h2>
+<main>
+  <section class="dish_show">
+    <img src="<%= @dish.img_url %>">
+  </section>
+
+  <p>details about dish here...</p>
+
+  <form action="/dishes" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="id" value="<%= @dish.id %>">
+    <button>Delete</button>
+  </form>
+
+  <p>likes <span class="likes-count"> <%= @dish.likes.count%></span></p>
+  <form class="" action="/likes" method="post">
+    <input type="hidden" name="dish_id" value="<%= @dish.id %>">
+    <button class ="like-btn">Like</button>
+  </form>
+
+  <a href="/dishes/<%= @dish.id %>/edit">Edit</a>
+  <section class="comments-list">
+    <form action="/comments" method="post">
+      <input type="hidden" name="dish_id" value="<%= @dish.id %>">
+      <textarea name="content"></textarea>
+      <button>Post Comment</button>
+    </form>
+
+    <h3>Comments</h3>
+      <% @comments.each do |comment| %>
+       <p><%= comment.content %></p>
+       <p><%= comment.user.email if comment.user %></p>
+      <% end %>
+  </section>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+  console.log('js is back');
+
+  //var likeBtn = document.querySelector('.like-btn');
+  var $likeBtn = $('.like-btn');
+  $likeBtn.on('click', function(event){
+    event.preventDefault();
+    var options = {
+      url: '/api/likes',
+      data:  (dish_id: <%= @dish_id %>),
+      method: 'post'
+    }
+
+    $.ajax(options).done(function(res){
+      console.log(res);
+      $('.likes-count').text(res.likes_count)
+    });
+
+  });
+</script>

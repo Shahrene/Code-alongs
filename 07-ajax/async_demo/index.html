@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+
+    // prints first
+    console.log('hello js');
+    //prints fourth
+    var notify = function() {
+      console.log('times up');
+    }
+
+    setTimeout( notify , 0 );
+    //setTimeout( function() { console.log('Times Up') } , 1000 )
+    
+    // prints all numbers second
+    var numbers = [1,2,3,4,5,6,7,8,9];
+
+    var printNum = function(num) {
+      console.log(num);
+    }
+    numbers.forEach(printNum);
+    //prints last
+    $.ajax({
+      url: 'http://omdbapi.com/?t=jaws&apikey=2f6435d9'
+    }).done(function(resp) {
+      console.log(resp.Title);
+    })
+    //prints third
+    console.log('the end');
+
+    </script>
+  </body>
+</html>

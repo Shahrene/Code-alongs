@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dessert-A-Base</title>
+  <link rel='stylesheet' href='/stylesheets/style.css'>
+</head>
+<body>
+  <% if logged_in? %>
+  <p>logged in as: <%= current_user.email %> </p>
+  <form action="/session" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Logout</button>
+  </form>
+  <% end %>
+  <h1>Dessert-A-Base</h1>
+  <nav>
+    <a href="/login">Login</a>
+    <a href="/dishes/new">Post A Dish</a>
+    <a href="#">About</a>
+    <a href="/">Home</a>
+  </nav>
+
+  <%= yield %>
+
+
+</body>
+<footer></footer>
+</html>

@@ -1,10 +1,10 @@
-<h1>Good Food Hunting </h1>
+<h1>Dessert-A-Base</h1>
 
 <a href="dishes/new">Post a New Dish</a>
 
 <main class="grid">
   <% @dishes.each do |dish| %>
-  
+
     <p>
       <a href="/dishes/<%= dish['id'] %>">
       <%= dish['name'] %>

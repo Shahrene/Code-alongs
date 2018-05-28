@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+    <script type="text/javascript">
+
+//module pattern/factory pattern
+      var createAccount = function(name) {
+
+        var balance = 0;  //private and can only be changed using the getBalance or deposit functions
+
+        var account = {
+          name: name,
+          getBalance: function() {
+            return balance;
+
+          },
+          deposit: function(a) {
+            balance = balance + a;
+          }
+        }
+        return account
+      }
+
+
+    </script>
+  </body>
+</html>

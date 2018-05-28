@@ -1,0 +1,12 @@
+<main class="grid">
+  <% @dishes.each do |dish| %>
+    <article class="">
+      <p>
+        <a href="/dishes/<%= dish.id %>">
+          <%= dish.name %>
+        </a>
+      </p>
+      <img src="<%= dish.img_url %>">
+    </article>
+  <% end %>
+</main>

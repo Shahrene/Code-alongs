@@ -1,0 +1,7 @@
+
+<h1>All Stuff for Sale</h1>
+<% @sales.each do |sale| %>
+
+<p><%= link_to sale.description, sales, data: { turbolinks: false } %></p>
+
+<% end %>

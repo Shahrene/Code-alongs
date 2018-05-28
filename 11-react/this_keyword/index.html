@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button>Deposit $1</button>
+    <script>
+
+      var account = {
+        balance: 0,
+        deposit: function(amount) {
+          this.balance += amount
+
+          setTimeout(() => {
+            this.balance += 5
+          }, 5000)
+        },
+        addOneDollar: function() {
+          this.balance +=1
+        }
+      }
+
+      var btn = document.querySelector('button')
+      btn.addEventListener('click', account.addOneDollar) //prevents the this keyword  from performing the above function
+
+      //how to make it work?
+      //1. use the default binding rule to make it work:
+      function car() {
+        console.log(this)
+      }
+
+      car() //this => global object (window)
+
+      //2. implicit binding
+      account.deposit(10) // this ==> account
+
+      //3. explicit binding
+      var myAccount = {
+        balance: 100000
+      }
+      //                    this
+      account.addOneDollar.call(myAccount) //only good if you are calling the function
+      account.deposit.call(myAccount, 10)
+
+      //4. hard binding like in React
+      var newCarFunction = car.bind(account) //bind comes from es5
+
+      //5. constructor function with new
+      var pffObj = new car(this) // <--- this refers to the variable
+
+      function makeCar() {
+        this.make = 'honda'  // adding this function will mean that the variable now refers to 'honda'
+      }
+
+    </script>
+  </body>
+</html>

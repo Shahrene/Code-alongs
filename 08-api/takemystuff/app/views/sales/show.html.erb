@@ -1,0 +1,50 @@
+
+<h1>Item for Sale</h1>
+
+
+<%= @sale.description %>
+
+<%= @sale.address %>
+
+<img src="<%=images.url %>" >
+
+<div id="map" style= "height: 200px;">
+
+</div>
+
+<form action="" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete</button>
+
+</form>
+
+<a href="/sales/<%=@sale.id%>/edit">Edit</a>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiMKoVGzwDIE3H2FmRQs4R52Ljz1CUz_k">
+</script>
+<script>
+  function initMap() {
+
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ address: '<%= @sale.address %>' }, function(results, status) {
+          if (status == 'OK') {
+            var latLng = results[0].geometry.location;
+            var map = new google.maps.Map(document.querySelector('.map'), {
+              zoom: 11,
+              center: latLng
+            });
+            var marker = new google.maps.Marker({
+              position: latLng,
+              map: map
+            });
+          } else {
+            console.log('failed')
+          }
+        });
+      }
+
+
+</script>
+
+</body>
+</html>
